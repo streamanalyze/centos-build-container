@@ -1,6 +1,6 @@
 FROM centos:latest
 
-RUN yum -y check-update
+RUN yum -y upgrade
 RUN yum -y install \
   gcc \
   make \
