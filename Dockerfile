@@ -1,6 +1,7 @@
 FROM centos:latest
 
-RUN yum -y check-update && yum -y install \
+RUN yum -y check-update
+RUN yum -y install \
   gcc \
   make \
   bison \
@@ -15,4 +16,4 @@ RUN yum -y check-update && yum -y install \
   gcc-c++ \
   libstdc++.i686 \
   zip \
-  unzip \
+  unzip
