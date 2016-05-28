@@ -15,15 +15,17 @@ RUN yum -y install \
   net-tools \
   wget
 
-
 RUN \
-  mkdir -p /tmp && wget -P /tmp --no-check-certificate --no-cookies \
+  mkdir -p /tmp && wget /tmp --no-check-certificate --no-cookies \
   --header "Cookie: oraclelicense=accept-securebackup-cookie" \
   http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-i586.tar.gz && \
   tar -xzvf /tmp/jdk-8u91-linux-i586.tar.gz -C /opt/ && rm -rf /tmp/jdk-8u91-linux-i586.tar.gz
 
   RUN \
-    mkdir -p /tmp && wget -P /tmp --no-check-certificate --no-cookies \
+    mkdir -p /tmp && wget /tmp --no-check-certificate --no-cookies \
     --header "Cookie: oraclelicense=accept-securebackup-cookie" \
     http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jre-8u91-linux-i586.tar.gz && \
     tar -xzvf /tmp/jre-8u91-linux-i586.tar.gz -C /opt/ && rm -rf /tmp/jre-8u91-linux-i586.tar.gz
+
+ENV JAVA_HOME /opt/jdk1.8.0_91
+ENV JRE_HOME /opt/jre1.8.0_91
